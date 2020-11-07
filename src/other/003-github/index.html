@@ -1,0 +1,353 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>github创建项目 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../004-bug/" />
+    
+    
+    <link rel="prev" href="../002-install/" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../001-gitbook/">
+            
+                <a href="../001-gitbook/">
+            
+                    
+                    什么是Gitbook
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../002-install/">
+            
+                <a href="../002-install/">
+            
+                    
+                    安装Gitbook
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    github创建项目
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../004-bug/">
+            
+                <a href="../004-bug/">
+            
+                    
+                    proxychains4-bug
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../.." >github创建项目</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p>github &#x521B;&#x5EFA; html&#x9879;&#x76EE; &#x516C;&#x5F00;</p>
+<p>github &#x521B;&#x5EFA; html_edit&#x9879;&#x76EE; &#x79C1;&#x6709;</p>
+<p>clone html_edit&#x9879;&#x76EE;</p>
+<pre><code class="lang-bash">gitbook init
+npm init -y
+npm i gulp@4
+</code></pre>
+<h2 id="summary&#x6A21;&#x677F;">Summary&#x6A21;&#x677F;</h2>
+<pre><code class="lang-plain"># Summary
+* [&#x7B80;&#x4ECB;](README.md)
+* [database](src/sql/index.md)
+    - [mysql](src/sql/mysql/index.md)
+        - [Data](src/sql/mysql/data/index.md)
+</code></pre>
+<h2 id="gulpfilejs-&#x6A21;&#x677F;">gulpfile.js &#x6A21;&#x677F;</h2>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> { watch } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;gulp&apos;</span>);
+<span class="hljs-keyword">const</span> fs        = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;fs&apos;</span>);
+<span class="hljs-keyword">const</span> path      = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;path&apos;</span>);
+
+<span class="hljs-keyword">const</span> watcher = watch([<span class="hljs-string">&apos;records/*&apos;</span>]);
+
+watcher.on(<span class="hljs-string">&apos;change&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">path, stats</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`File <span class="hljs-subst">${path}</span> was changed`</span>);
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;file change &#x4EC0;&#x4E48;&#x4E5F;&#x4E0D;&#x505A; ===&apos;</span>);
+});
+
+watcher.on(<span class="hljs-string">&apos;add&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">path, stats</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`File <span class="hljs-subst">${path}</span> was added`</span>);
+  foo();
+});
+
+watcher.on(<span class="hljs-string">&apos;unlink&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">path, stats</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`File <span class="hljs-subst">${path}</span> was removed`</span>);
+  foo();
+});
+
+<span class="hljs-comment">// watcher.close();</span>
+
+exports.default = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">cb</span>) </span>{
+  foo();
+  cb();
+};
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span> (<span class="hljs-params"></span>) </span>{
+  fs.readdir(path.resolve(__dirname, <span class="hljs-string">&apos;records&apos;</span>), <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err, files</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(files);
+
+    <span class="hljs-keyword">var</span> ss = <span class="hljs-string">`# records
+* [records](README.md)
+`</span>;
+    files.sort(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">a, b</span>) </span>{
+      <span class="hljs-keyword">return</span> a.length - b.length;
+    });
+
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; files.length; ++i) {
+
+      <span class="hljs-keyword">let</span> file = files[i];
+
+      <span class="hljs-keyword">if</span> (file === <span class="hljs-string">&apos;.DS_Store&apos;</span>) {<span class="hljs-keyword">continue</span>;}
+
+      ss += <span class="hljs-string">`    - [<span class="hljs-subst">${file}</span>](records/<span class="hljs-subst">${file}</span>/<span class="hljs-subst">${file}</span>.md)\n`</span>;
+
+    }
+    <span class="hljs-keyword">let</span> filepath = path.resolve(__dirname, <span class="hljs-string">&apos;SUMMARY.md&apos;</span>);
+    <span class="hljs-keyword">let</span> content  = ss;
+    fs.writeFile(filepath, content, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err</span>) </span>{
+      <span class="hljs-keyword">if</span> (err) {<span class="hljs-keyword">return</span> <span class="hljs-built_in">console</span>.error(err);}
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;&#x6570;&#x636E;&#x5199;&#x5165;&#x6210;&#x529F;&#xFF01;&apos;</span>);
+    });
+  });
+}
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../002-install/" class="navigation navigation-prev " aria-label="Previous page: 安装Gitbook">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../004-bug/" class="navigation navigation-next " aria-label="Next page: proxychains4-bug">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"github创建项目","level":"1.4","depth":1,"next":{"title":"proxychains4-bug","level":"1.5","depth":1,"path":"src/other/004-bug/index.md","ref":"src/other/004-bug/index.md","articles":[]},"previous":{"title":"安装Gitbook","level":"1.3","depth":1,"path":"src/other/002-install/index.md","ref":"src/other/002-install/index.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"src/other/003-github/index.md","mtime":"2020-11-07T19:10:22.602Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-11-07T19:17:45.827Z"},"basePath":"../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
